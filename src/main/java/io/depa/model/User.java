@@ -33,7 +33,7 @@ public class User extends DateAudit implements Comparable<User> {
     @OneToOne(cascade =  CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
     private Profile profile;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "userRole",
             joinColumns = @JoinColumn(name = "userId"),
             inverseJoinColumns = @JoinColumn(name = "roleId"))

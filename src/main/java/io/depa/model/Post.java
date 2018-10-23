@@ -53,7 +53,7 @@ public class Post extends UserDateAudit implements Comparable<Post> {
             inverseJoinColumns = @JoinColumn(name = "commentId"))
     private List<Comment> comments = new ArrayList<>();
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "postTag",
             joinColumns = @JoinColumn(name = "postId"),
             inverseJoinColumns = @JoinColumn(name = "tagId"))

@@ -14,6 +14,7 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 public interface Helpers {
+
     static <T extends UserDateAudit> Map<Integer, User> getCreatorMap(List<T> list, UserRepository userRepository) {
         // Get Creator details of the given list
         List<Integer> creatorIds = list.stream()

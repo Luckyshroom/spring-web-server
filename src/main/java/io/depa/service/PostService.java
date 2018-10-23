@@ -14,7 +14,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collections;
 import java.util.List;
@@ -29,8 +28,8 @@ import java.util.stream.Collectors;
  */
 
 @Service
-@Transactional
 public class PostService {
+
     private final CategoryRepository categoryRepository;
     private final ContextRepository contextRepository;
     private final PostRepository postRepository;
@@ -80,6 +79,7 @@ public class PostService {
     }
 
     public PagedResponse<PostResponse> getByCategory(int categoryId, int page, int size) {
+
         Helpers.validatePageNumberAndSize(page, size);
         // Retrieve Posts
         Pageable pageable = PageRequest.of(page, size, Sort.Direction.DESC, "createdAt");

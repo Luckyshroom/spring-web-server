@@ -12,7 +12,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public interface ModelMapper {
+
     static CommentResponse toCommentResponse(Comment comment, User creator) {
+
         CommentResponse commentResponse = new CommentResponse();
 
         commentResponse.setId(comment.getId());
@@ -24,6 +26,7 @@ public interface ModelMapper {
     }
 
     static PostResponse toPostResponse(Post post, User creator) {
+
         PostResponse postResponse = new PostResponse();
 
         postResponse.setId(post.getId());
@@ -46,6 +49,7 @@ public interface ModelMapper {
     }
 
     static UserSummary toUserSummary(User user) {
+
         List<String> userRoles = user.getRoles().stream().map(role ->
                 role.getName().toString()).collect(Collectors.toList());
 

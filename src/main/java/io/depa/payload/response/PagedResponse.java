@@ -3,6 +3,7 @@ package io.depa.payload.response;
 import java.util.List;
 
 public class PagedResponse<T> {
+
     private List<T> content;
     private int page;
     private int size;
